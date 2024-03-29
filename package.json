@@ -1,0 +1,21 @@
+{
+  "name": "private-detector-ts",
+  "version": "1.0.0",
+  "description": "an implementation of Bumble's Private Detector in TypeScript",
+  "main": "main.ts",
+  "scripts": {
+    "start": "bun run --watch main.ts"
+  },
+  "author": "russplusplus",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-converter": "^4.17.0",
+    "@tensorflow/tfjs-node": "^4.17.0"
+  }
+}
