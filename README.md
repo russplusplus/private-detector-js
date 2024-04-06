@@ -1,15 +1,11 @@
 # private-detector-ts
 
-To install dependencies:
+This repo is for using Bumble's Private Detector™ model in TypeScript.
 
-```bash
-bun install
-```
+## Model
 
-To run:
+The model was converted from Python using TensorFlow.js's converter tool. The SavedModel can be created by following the instructions [here](https://www.npmjs.com/package/@tensorflow/tfjs-converter).
 
-```bash
-bun run main.ts
-```
 
-This project was created using `bun init` in bun v1.0.33. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+
+

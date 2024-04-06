@@ -1,0 +1,15 @@
+node_modules/
+src/
+
+.env
+ .DS_Store
+
+ tsconfig.json
+ tsup.config.ts
+
+samples/no/
+samples/yes/
+*.jpg
+
+model/
+tensor_checkpoints/

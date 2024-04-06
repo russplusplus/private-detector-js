@@ -4,6 +4,7 @@ Module for preprocessing images fed to the model
 
 import * as tf from '@tensorflow/tfjs-node';
 import * as fs from 'fs';
+import type { Paddings } from '../types';
 
 export function read_image(filename: string): tf.Tensor2D {
 
@@ -19,7 +20,7 @@ export function read_image(filename: string): tf.Tensor2D {
     return reshapedImage
 }
 
-export function preprocess_for_evaluation(image: tf.Tensor3D, image_size: number): tf.Tensor3D {
+function preprocess_for_evaluation(image: tf.Tensor3D, image_size: number): tf.Tensor3D {
     
     const paddedResizedImage: tf.Tensor3D = pad_resize_image(image, [image_size, image_size]);
 
@@ -30,7 +31,7 @@ export function preprocess_for_evaluation(image: tf.Tensor3D, image_size: number
     return dividedImage
 }
 
-export function pad_resize_image(image: tf.Tensor3D, dims: [number, number]): tf.Tensor3D {
+function pad_resize_image(image: tf.Tensor3D, dims: [number, number]): tf.Tensor3D {
    
     // aspect ratio = width / height
     const aspectRatio: number = image.shape[1] / image.shape[0];
@@ -82,7 +83,7 @@ export function pad_resize_image(image: tf.Tensor3D, dims: [number, number]): tf
     const paddingL: number = paddingX.dataSync()[0]
     const paddingR: number = dWidth - paddingX.dataSync()[0]
 
-    const paddingsArr: [[number, number], [number, number], [number, number]] = [
+    const paddingsArr: Paddings = [
         [paddingT, paddingB],
         [paddingL, paddingR],
         [0, 0]
