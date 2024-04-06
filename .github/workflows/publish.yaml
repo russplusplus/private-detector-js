@@ -7,7 +7,8 @@ on:
 # this prevents multiple workflows from running concurrently.
 concurrency: $${{ github.workflow }}-${{ github.ref}}
 
-build:
+jobs:
+  build:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
