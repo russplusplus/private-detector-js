@@ -1,5 +1,11 @@
 # private-detector-ts
 
+## 0.0.6
+
+### Patch Changes
+
+- 0f94178: added GITHUB_TOKEN
+
 ## 0.0.5
 
 ### Patch Changes
