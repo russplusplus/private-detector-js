@@ -185,3 +185,6 @@ tensor_checkpoints/
 
 # Model
 model/
+
+# Tests
+test.ts

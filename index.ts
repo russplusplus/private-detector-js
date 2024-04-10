@@ -1,5 +1,6 @@
 import * as tf from '@tensorflow/tfjs-node';
 import { read_image } from './src/preprocess';
+import fetch from 'node-fetch'
 
 export default async function RunInference(modelPath: string, filePaths: string[]): Promise<number[]> {
     return new Promise(async (resolve, reject) => {
@@ -13,7 +14,6 @@ export default async function RunInference(modelPath: string, filePaths: string[
                 const data: Float32Array = output.dataSync() as Float32Array
                 probs.push(data[0])
             }
-    
             resolve(probs)
         } catch (error) {
             reject(error)

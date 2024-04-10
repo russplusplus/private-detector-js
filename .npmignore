@@ -13,3 +13,5 @@ samples/yes/
 
 model/
 tensor_checkpoints/
+
+test.ts
