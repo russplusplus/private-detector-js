@@ -1,4 +1,4 @@
-# private-detector-ts
+# private-detector-js
 
 This repo is for using Bumble's Private Detector™ model in TypeScript.
 

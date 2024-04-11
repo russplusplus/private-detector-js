@@ -1,5 +1,5 @@
 {
-  "name": "private-detector-ts",
+  "name": "private-detector-js",
   "version": "0.0.5",
   "description": "an implementation of Bumble's Private Detector in TypeScript",
   "main": "dist/index.cjs",
