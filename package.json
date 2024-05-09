@@ -1,12 +1,12 @@
 {
   "name": "private-detector-js",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "an implementation of Bumble's Private Detector in TypeScript",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "bun run --watch src/main.ts",
     "build": "tsup index.ts --format cjs,esm --dts",
     "lint": "tsc"
   },
@@ -26,7 +26,7 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
-    "@tensorflow/tfjs-node": "^4.17.0",
-    "node-fetch": "^3.3.2"
-  }
+    "@tensorflow/tfjs-node": "^4.17.0"
+  },
+  "type": "module"
 }

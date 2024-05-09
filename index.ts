@@ -1,8 +1,7 @@
 import * as tf from '@tensorflow/tfjs-node';
 import { read_image } from './src/preprocess';
-import fetch from 'node-fetch'
 
-export default async function RunInference(modelPath: string, filePaths: string[]): Promise<number[]> {
+export async function RunInference(modelPath: string, filePaths: string[]): Promise<number[]> {
     return new Promise(async (resolve, reject) => {
         try {
             const model: tf.GraphModel = await tf.loadGraphModel(modelPath);
