@@ -5,10 +5,18 @@ Module for preprocessing images fed to the model
 import * as tf from '@tensorflow/tfjs-node';
 import * as fs from 'fs';
 import type { Paddings } from '../types';
+import axios from 'axios'
 
-export function read_image(filename: string): tf.Tensor2D {
+export async function read_image(filepath: string): Promise<tf.Tensor2D> {
 
-    const imageBuffer: Buffer = fs.readFileSync(filename)
+    let imageBuffer: Buffer
+
+    if (filepath.startsWith('http')) {
+        const imageRes = await axios.get(filepath, { responseType: 'arraybuffer' })
+        imageBuffer = Buffer.from(imageRes.data, "utf-8")
+    } else {
+        imageBuffer = fs.readFileSync(filepath)
+    }
 
     // tf.node.decodeImage will always return a 3D tensor when 3 channels are specified, but TypeScript doesn't know this so we need to assert the type
     const imageTensor: tf.Tensor3D = tf.node.decodeImage(imageBuffer, 3) as tf.Tensor3D
@@ -77,7 +85,7 @@ function pad_resize_image(image: tf.Tensor3D, dims: [number, number]): tf.Tensor
     ) as tf.Tensor1D
 
     // Because we are using integer tensors, padding will be asymmetrical if the required total padding is an odd number of cells. 
-    // Therefore, we need to calculate the padding for each side.
+    // Therefore, we need to calculate the padding for each side separately.
     const paddingT: number = paddingY.dataSync()[0]
     const paddingB: number = dHeight - paddingY.dataSync()[0]
     const paddingL: number = paddingX.dataSync()[0]
