@@ -15,7 +15,7 @@ const { RunInference } = import 'private-detector-js'
 ```
 ### CommonJS
 ```javascript
-const pdjs = require('private-detector-js')
+const { RunInference } = require('private-detector-js')
 ```
 ## Usage
 ```javascript
@@ -24,9 +24,10 @@ const probabilities = await RunInference(modelPath, filePaths, options)
 
 | Parameter | Type   | Description                                                                                                                   |
 | --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| modelPath | String | path of the model.json file                                                                                                   |
-| filePaths | Array  | path(s) of the images to be evaulated                                                                                         |
-| options   | Object | options to manually provide paths to the model's weight files. More information [here](https://js.tensorflow.org/api/latest/) |
+| modelPath | String | path to the model.json file                                                                                                   |
+| filePaths | Array  | path(s) to the image(s) to be evaulated                                                                                         |
+| options   | Object | options to manually provide paths to the model's weight files. Currently, weightUrlConverter and weightPathPrefix are supported. More information [here](https://js.tensorflow.org/api/latest/) |
+
 
 
 ## Model
