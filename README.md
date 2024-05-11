@@ -22,17 +22,12 @@ const pdjs = require('private-detector-js')
 const probabilities = await RunInference(modelPath, filePaths, options)
 ```
 
-modelPath: string
-- path of the model.json file
+| Parameter | Type   | Description                                                                                                                   |
+| --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| modelPath | String | path of the model.json file                                                                                                   |
+| filePaths | Array  | path(s) of the images to be evaulated                                                                                         |
+| options   | Object | options to manually provide paths to the model's weight files. More information [here](https://js.tensorflow.org/api/latest/) |
 
-filePaths: string[]
-- path(s) of the images to be evaluated
-
-options: { 
-    weightPathPrefix?: string, 
-    weightUrlConverter?: (filename: string) => Promise<string> 
-}
-- options to manually provide paths to the model's weight files. More information [here](https://js.tensorflow.org/api/latest/)
 
 ## Model
 
