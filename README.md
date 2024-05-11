@@ -1,6 +1,6 @@
 # private-detector-js
 
-This repo is for using Bumble's Private Detector™ model in TypeScript.
+This package provides the necessary image preprocessing to use Bumble's Private Detector™ model in JavaScript or TypeScript.
 
 ## Install
 ```shell
@@ -32,4 +32,4 @@ const probabilities = await RunInference(modelPath, filePaths, options)
 
 ## Model
 
-The model was converted from Python using TensorFlow.js's converter tool. The SavedModel can be created by following the instructions [here](https://www.npmjs.com/package/@tensorflow/tfjs-converter).
+The model can be converted from Python using TensorFlow.js's converter tool. Following the instructions [here](https://www.npmjs.com/package/@tensorflow/tfjs-converter) to create a SavedModel.
