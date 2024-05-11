@@ -1,10 +1,11 @@
 import * as tf from '@tensorflow/tfjs-node';
 import { read_image } from './src/preprocess';
+import type { Options } from './types';
 
-export async function RunInference(modelPath: string, filePaths: string[]): Promise<number[]> {
+export async function RunInference(modelPath: string, filePaths: string[], options: Options): Promise<number[]> {
     return new Promise(async (resolve, reject) => {
         try {
-            const model: tf.GraphModel = await tf.loadGraphModel(modelPath);
+            const model: tf.GraphModel = await tf.loadGraphModel(modelPath, {weightUrlConverter: options.weightUrlConverter});
             let probs: number[] = []
     
             for (let path of filePaths) {

@@ -1,6 +1,6 @@
 {
   "name": "private-detector-js",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "an implementation of Bumble's Private Detector in TypeScript",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -24,16 +24,12 @@
   "author": "russplusplus",
   "license": "ISC",
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
-    "@supabase/supabase-js": "^2.42.0",
-    "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
   },
   "dependencies": {
     "@tensorflow/tfjs-node": "^4.17.0",
-    "axios": "^1.6.8",
-    "sync-fetch": "^0.5.2"
+    "axios": "^1.6.8"
   },
   "type": "module",
   "engines": {
