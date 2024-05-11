@@ -1,6 +1,6 @@
 {
   "name": "private-detector-js",
-  "version": "0.0.13",
+  "version": "0.0.17",
   "description": "an implementation of Bumble's Private Detector in TypeScript",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -13,6 +13,7 @@
   "scripts": {
     "start": "bun run --watch src/main.ts",
     "build": "tsup index.ts --format cjs,esm --dts",
+    "deploy": "tsup index.ts --format cjs,esm --dts && npm publish",
     "lint": "tsc"
   },
   "keywords": [

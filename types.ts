@@ -3,5 +3,6 @@ export type Paddings = [
 ]
 
 export type Options = {
-    weightUrlConverter?: (filename: string) => Promise<string>
+    weightUrlConverter?: (filename: string) => Promise<string>,
+    weightPathPrefix?: string
 }
