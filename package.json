@@ -1,6 +1,6 @@
 {
   "name": "private-detector-js",
-  "version": "0.0.17",
+  "version": "1.0.0",
   "description": "an implementation of Bumble's Private Detector in TypeScript",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -35,5 +35,13 @@
   "type": "module",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russplusplus/private-detector-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/russplusplus/private-detector-js/issues"
+  },
+  "homepage": "https://github.com/russplusplus/private-detector-js#readme"
 }

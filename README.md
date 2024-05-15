@@ -32,4 +32,6 @@ const probabilities = await RunInference(modelPath, filePaths, options)
 
 ## Model
 
-The model can be converted from Python using TensorFlow.js's converter tool. Following the instructions [here](https://www.npmjs.com/package/@tensorflow/tfjs-converter) to create a SavedModel.
+The model can be found [here](https://huggingface.co/russplusplus/bumble-private-detector-js/tree/main).
+
+This model was converted from Python using TensorFlow.js's converter tool, as described [here](https://www.npmjs.com/package/@tensorflow/tfjs-converter) to create a SavedModel.
